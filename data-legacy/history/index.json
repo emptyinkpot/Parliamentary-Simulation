@@ -1,0 +1,69 @@
+{
+  "periods": [
+    {
+      "year": 100,
+      "name": "东汉",
+      "description": "东汉王朝鼎盛时期"
+    },
+    {
+      "year": 220,
+      "name": "三国",
+      "description": "魏蜀吴三国鼎立"
+    },
+    {
+      "year": 400,
+      "name": "东晋十六国",
+      "description": "南北对峙时期"
+    },
+    {
+      "year": 600,
+      "name": "隋朝",
+      "description": "隋朝统一天下"
+    },
+    {
+      "year": 750,
+      "name": "唐朝鼎盛",
+      "description": "唐朝疆域辽阔，万国来朝"
+    },
+    {
+      "year": 900,
+      "name": "唐末五代",
+      "description": "藩镇割据，五代十国"
+    },
+    {
+      "year": 1100,
+      "name": "北宋",
+      "description": "北宋与辽、西夏并立"
+    },
+    {
+      "year": 1200,
+      "name": "南宋金朝",
+      "description": "南宋、金、西夏三国鼎立"
+    },
+    {
+      "year": 1300,
+      "name": "元朝",
+      "description": "蒙古帝国统一天下"
+    },
+    {
+      "year": 1500,
+      "name": "明朝鼎盛",
+      "description": "明朝疆域广阔"
+    },
+    {
+      "year": 1750,
+      "name": "清朝鼎盛",
+      "description": "康乾盛世，版图最大"
+    },
+    {
+      "year": 1850,
+      "name": "清末",
+      "description": "太平天国运动"
+    },
+    {
+      "year": 1912,
+      "name": "民国",
+      "description": "中华民国成立"
+    }
+  ]
+}
