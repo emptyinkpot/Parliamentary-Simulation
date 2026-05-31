@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 26
+  productGUID: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
+  productName: Imperial Strategy Game
+  companyName: EmptyInkpot
+  defaultScreenWidth: 1920
+  defaultScreenHeight: 1080
+  defaultIsNativeResolution: 1
+  usePlayerLog: 1
+  targetDevice: 2
+  resizableWindow: 1
+  fullscreenMode: 3
+  defaultIsFullScreen: 0
+  allowFullscreenSwitch: 1
+  scripting_Backend: 1
+  il2cppCompilerConfiguration: 2
+  apiCompatibilityLevel: 6
+  activeColorSpace: 1
+  colorGamut:
+  - 0
+  bundleVersion: 0.1.0
+  scriptingRuntimeVersion: 1
+  gcIncremental: 1
+  assemblyVersionValidation: 1
+  managedStrippingLevel: 1
