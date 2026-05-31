@@ -43,7 +43,7 @@ static func clear_registry() -> void:
 
 
 ## Load all provinces from a CSV file.
-## Expected CSV columns: id;r;g;b;name;x;y
+## Expected CSV columns: province_id;r;g;b;name;adcode
 static func load_all_from_csv(path: String) -> Array:
 	clear_registry()
 
@@ -75,9 +75,6 @@ static func load_all_from_csv(path: String) -> Array:
 		var b := parts[3].to_int()
 		province.color = Color(r / 255.0, g / 255.0, b / 255.0)
 		province.province_name = parts[4]
-
-		if parts.size() >= 7:
-			province.center_position = Vector2(parts[5].to_float(), parts[6].to_float())
 
 		register(province)
 

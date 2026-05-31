@@ -1,4 +1,3 @@
-class_name GameManager
 extends Node
 ## Autoload singleton managing the game clock, speed, and date advancement.
 

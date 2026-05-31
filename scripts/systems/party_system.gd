@@ -1,4 +1,3 @@
-class_name PartySystem
 extends Node
 ## Manages political parties: creation, dissolution, spectrum, and coalitions.
 

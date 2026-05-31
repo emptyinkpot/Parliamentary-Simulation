@@ -1,4 +1,3 @@
-class_name WarSystem
 extends Node
 ## War declaration, war goals, war score, peace negotiation, and state machine.
 

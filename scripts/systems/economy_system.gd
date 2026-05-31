@@ -1,4 +1,3 @@
-class_name EconomySystem
 extends Node
 ## Autoload singleton handling monthly economic calculations.
 

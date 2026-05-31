@@ -1,4 +1,3 @@
-class_name DiplomacySystem
 extends Node
 ## Diplomatic relations, actions, alliances, and treaties between countries.
 

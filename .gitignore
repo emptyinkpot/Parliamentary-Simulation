@@ -35,3 +35,4 @@ map-output/provinces.bmp
 
 # Archives
 *.tar.gz
+.godot/

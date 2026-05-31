@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://pgw3dep4hxgq"]
 
-[ext_resource type="Script" path="res://scripts/core/game_bootstrap.gd" id="1_bootstrap"]
-[ext_resource type="Script" path="res://scripts/map/province_map.gd" id="2_province_map"]
-[ext_resource type="Script" path="res://scripts/map/map_camera.gd" id="3_map_camera"]
+[ext_resource type="Script" uid="uid://d0rf4bnxo3oh6" path="res://scripts/core/game_bootstrap.gd" id="1_bootstrap"]
+[ext_resource type="Script" uid="uid://cgiygm5lw4sa6" path="res://scripts/map/province_map.gd" id="2_province_map"]
+[ext_resource type="Script" uid="uid://dayrbochek82h" path="res://scripts/map/map_camera.gd" id="3_map_camera"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bootstrap")

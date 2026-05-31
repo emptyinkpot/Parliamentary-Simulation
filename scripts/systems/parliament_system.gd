@@ -1,4 +1,3 @@
-class_name ParliamentSystem
 extends Node
 ## Bicameral parliament: Upper House (90 seats) and Lower House (435 seats).
 ## Manages bill lifecycle and voting logic.

@@ -1,8 +1,7 @@
-class_name GameBootstrap
 extends Node2D
 ## Attached to Main scene root. Initializes game systems, loads data, creates test entities.
 
-const PROVINCE_CSV_PATH := "res://data/definition.csv"
+const PROVINCE_CSV_PATH := "res://map-output/definition.csv"
 
 var provinces_loaded: int = 0
 var countries_loaded: int = 0

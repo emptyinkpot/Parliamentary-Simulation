@@ -1,4 +1,3 @@
-class_name MilitarySystem
 extends Node
 ## Army management: recruitment, movement, battle, siege, and war exhaustion.
 

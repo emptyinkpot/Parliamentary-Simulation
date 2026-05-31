@@ -1,4 +1,3 @@
-class_name CabinetSystem
 extends Node
 ## Manages the imperial cabinet: appointments, dismissals, and dissolution.
 

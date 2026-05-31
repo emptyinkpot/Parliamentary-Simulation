@@ -22,13 +22,14 @@ func _ready() -> void:
 
 
 func _load_map() -> void:
-	if not FileAccess.file_exists(map_texture_path):
+	var tex = load(map_texture_path)
+	if tex == null:
 		push_warning("ProvinceMap: Map file not found at %s" % map_texture_path)
 		return
 
-	_base_image = Image.load_from_file(map_texture_path)
+	_base_image = tex.get_image()
 	if _base_image == null:
-		push_error("ProvinceMap: Failed to load map image.")
+		push_error("ProvinceMap: Failed to get image from texture.")
 		return
 
 	_generate_political_map()

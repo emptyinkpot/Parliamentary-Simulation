@@ -1,0 +1,15 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://begwistk8xiok"
+valid=false
+
+[deps]
+
+source_file="res://Assets/StreamingAssets/map-output/definition.csv"
+
+[params]
+
+compress=true
+delimiter=0

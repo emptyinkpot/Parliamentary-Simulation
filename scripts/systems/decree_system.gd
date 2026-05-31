@@ -1,4 +1,3 @@
-class_name DecreeSystem
 extends Node
 ## Manages imperial decrees: issuance, lifecycle, and emergency powers.
 ## Only the Emperor can issue decrees.

@@ -18,6 +18,13 @@ config/features=PackedStringArray("4.4")
 
 GameManager="*res://scripts/core/game_manager.gd"
 EconomySystem="*res://scripts/systems/economy_system.gd"
+ParliamentSystem="*res://scripts/systems/parliament_system.gd"
+PartySystem="*res://scripts/systems/party_system.gd"
+DecreeSystem="*res://scripts/systems/decree_system.gd"
+CabinetSystem="*res://scripts/systems/cabinet_system.gd"
+MilitarySystem="*res://scripts/systems/military_system.gd"
+WarSystem="*res://scripts/systems/war_system.gd"
+DiplomacySystem="*res://scripts/systems/diplomacy_system.gd"
 
 [display]
 
