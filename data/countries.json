@@ -1,0 +1,13 @@
+[
+  {"id": 1, "name": "日本", "tag": "JPN", "color": [200, 200, 200], "capital_province_id": -1},
+  {"id": 2, "name": "中国", "tag": "CHN", "color": [200, 50, 50], "capital_province_id": 1},
+  {"id": 3, "name": "朝鲜", "tag": "KOR", "color": [100, 150, 200], "capital_province_id": -1},
+  {"id": 4, "name": "俄罗斯", "tag": "RUS", "color": [50, 100, 50], "capital_province_id": -1},
+  {"id": 5, "name": "英国", "tag": "GBR", "color": [200, 0, 0], "capital_province_id": -1},
+  {"id": 6, "name": "法国", "tag": "FRA", "color": [0, 0, 200], "capital_province_id": -1},
+  {"id": 7, "name": "德国", "tag": "DEU", "color": [100, 100, 100], "capital_province_id": -1},
+  {"id": 8, "name": "美国", "tag": "USA", "color": [50, 50, 150], "capital_province_id": -1},
+  {"id": 9, "name": "奥斯曼", "tag": "OTT", "color": [0, 150, 0], "capital_province_id": -1},
+  {"id": 10, "name": "奥匈帝国", "tag": "AUH", "color": [200, 200, 0], "capital_province_id": -1},
+  {"id": 11, "name": "意大利", "tag": "ITA", "color": [0, 200, 100], "capital_province_id": -1}
+]

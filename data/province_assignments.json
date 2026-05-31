@@ -1,0 +1,13 @@
+{
+  "default_owner": 2,
+  "overrides": {
+    "136": 7,
+    "40": 4,
+    "144": 5
+  },
+  "notes": {
+    "136": "青岛 - German concession (Kiautschou Bay, 1898)",
+    "40": "大连 - Russian leasehold (Dalian/Port Arthur, 1898)",
+    "144": "威海 - British leasehold (Weihaiwei, 1898)"
+  }
+}
