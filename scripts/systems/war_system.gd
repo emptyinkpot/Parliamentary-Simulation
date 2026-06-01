@@ -59,7 +59,7 @@ class WarData:
 	var provinces_occupied_by_defender: int = 0
 	var blockade_score: int = 0
 	var months_at_war: int = 0
-	var start_date: float = 0.0  ## Unix timestamp
+	var start_day: int = 0  ## game-day count at declaration
 
 
 # --- State ---
@@ -106,7 +106,7 @@ func declare_war(attacker_id: int, defender_id: int,
 	war.defender_country_id = defender_id
 	war.casus_belli = cb
 	war.status = WarStatus.PREPARING
-	war.start_date = Time.get_unix_time_from_system()
+	war.start_day = GameManager.total_days
 
 	_wars[war.id] = war
 	_next_war_id += 1

@@ -50,7 +50,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_zoom_at_point(-zoom_speed, event.global_position)
 
 	elif event is InputEventMouseMotion and _is_dragging:
-		var delta_drag := (_drag_start - event.global_position) * drag_sensitivity / zoom.x
+		var delta_drag: Vector2 = (_drag_start - event.global_position) * drag_sensitivity / zoom.x
 		position += delta_drag
 		_drag_start = event.global_position
 

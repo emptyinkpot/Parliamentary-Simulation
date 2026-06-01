@@ -25,6 +25,11 @@ CabinetSystem="*res://scripts/systems/cabinet_system.gd"
 MilitarySystem="*res://scripts/systems/military_system.gd"
 WarSystem="*res://scripts/systems/war_system.gd"
 DiplomacySystem="*res://scripts/systems/diplomacy_system.gd"
+BuildingSystem="*res://scripts/systems/building_system.gd"
+TradeSystem="*res://scripts/systems/trade_system.gd"
+ColonySystem="*res://scripts/systems/colony_system.gd"
+EventSystem="*res://scripts/systems/event_system.gd"
+AchievementSystem="*res://scripts/systems/achievement_system.gd"
 
 [display]
 

@@ -1,31 +1,28 @@
-# Unity
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
+# Godot 4+
+.godot/
+/android/
+export.cfg
+export_presets.cfg
+*.translation
+
+# Godot generated mono/dotnet (project is GDScript-only)
+.mono/
+data_*/
+*.csproj
+*.sln
 
 # IDE
 .vs/
 .vscode/
-*.csproj
-*.sln
 *.suo
 *.user
-*.pidb
-*.booproj
 
 # OS
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Node (legacy tools)
-node_modules/
-
-# Python
+# Python (map tooling)
 __pycache__/
 *.pyc
 .venv/
@@ -35,4 +32,3 @@ map-output/provinces.bmp
 
 # Archives
 *.tar.gz
-.godot/

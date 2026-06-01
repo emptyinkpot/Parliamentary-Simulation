@@ -41,8 +41,8 @@ class DecreeData:
 	var status: int = DecreeStatus.DRAFT
 	var issuer_id: String
 	var priority: int       ## 1-10
-	var issued_date: float  ## Unix timestamp
-	var expiry_date: float  ## 0 means permanent
+	var issued_day: int   ## game-day count at issuance
+	var expiry_day: int   ## 0 means permanent; otherwise absolute game-day
 
 	func is_emergency() -> bool:
 		return type == DecreeType.EMERGENCY
@@ -97,7 +97,7 @@ func issue_decree(id: String, title: String, content: String,
 	if duration_days < 0:
 		duration_days = EMERGENCY_DURATION_DAYS if type == DecreeType.EMERGENCY else DEFAULT_DURATION_DAYS
 
-	var now := Time.get_unix_time_from_system()
+	var current_day := GameManager.total_days
 	var decree := DecreeData.new()
 	decree.id = id
 	decree.title = title
@@ -106,8 +106,8 @@ func issue_decree(id: String, title: String, content: String,
 	decree.status = DecreeStatus.DRAFT
 	decree.issuer_id = issuer_id
 	decree.priority = priority
-	decree.issued_date = now
-	decree.expiry_date = now + duration_days * 86400.0 if duration_days > 0 else 0.0
+	decree.issued_day = current_day
+	decree.expiry_day = current_day + duration_days if duration_days > 0 else 0
 
 	_decrees[id] = decree
 	decree_issued.emit(id)
@@ -143,10 +143,10 @@ func revoke(decree_id: String) -> bool:
 
 ## Checks all active decrees for expiry. Call once per game day.
 func tick_expiry() -> void:
-	var now := Time.get_unix_time_from_system()
+	var now := GameManager.total_days
 	for decree_id: String in _decrees:
 		var d: DecreeData = _decrees[decree_id]
-		if d.status == DecreeStatus.ACTIVE and d.expiry_date > 0.0 and now >= d.expiry_date:
+		if d.status == DecreeStatus.ACTIVE and d.expiry_day > 0 and now >= d.expiry_day:
 			d.status = DecreeStatus.EXPIRED
 			decree_expired.emit(decree_id)
 	_recalculate_parliament_suspension()

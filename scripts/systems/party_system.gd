@@ -45,8 +45,8 @@ class PartyData:
 	var leader_id: String
 	var spectrum: PoliticalSpectrum
 	var is_established: bool = false
-	var created_date: float  ## Unix timestamp
-	var expiry_date: float   ## Unix timestamp
+	var created_day: int  ## game-day count at creation
+	var expiry_day: int   ## absolute game-day the forming window closes
 	var member_ids: Array[String] = []
 	var supporter_ids: Array[String] = []
 	var tags: Array[String] = []
@@ -99,7 +99,7 @@ func create_party(id: String, p_name: String, abbreviation: String,
 	if _member_party.has(founder_id):
 		return null
 
-	var now := Time.get_unix_time_from_system()
+	var current_day := GameManager.total_days
 	var party := PartyData.new()
 	party.id = id
 	party.name = p_name
@@ -109,8 +109,8 @@ func create_party(id: String, p_name: String, abbreviation: String,
 	party.leader_id = founder_id
 	party.spectrum = spectrum
 	party.is_established = false
-	party.created_date = now
-	party.expiry_date = now + FORMING_DURATION_DAYS * 86400.0
+	party.created_day = current_day
+	party.expiry_day = current_day + FORMING_DURATION_DAYS
 	party.member_ids = [founder_id]
 	party.supporter_ids = [founder_id]
 	party.tags = tags
@@ -126,7 +126,7 @@ func add_supporter(party_id: String, supporter_id: String) -> bool:
 	var party: PartyData = _parties.get(party_id)
 	if party == null or party.is_established:
 		return false
-	if Time.get_unix_time_from_system() > party.expiry_date:
+	if GameManager.total_days > party.expiry_day:
 		return false
 	if supporter_id in party.supporter_ids:
 		return false
@@ -192,11 +192,11 @@ func elect_leader(party_id: String, new_leader_id: String) -> bool:
 
 ## Check and expire parties that failed to gather supporters in time.
 func tick_expiry() -> void:
-	var now := Time.get_unix_time_from_system()
+	var now := GameManager.total_days
 	var to_dissolve: Array[String] = []
 	for party_id: String in _parties:
 		var party: PartyData = _parties[party_id]
-		if not party.is_established and now > party.expiry_date:
+		if not party.is_established and now > party.expiry_day:
 			to_dissolve.append(party_id)
 	for pid: String in to_dissolve:
 		dissolve_party(pid, "expired")

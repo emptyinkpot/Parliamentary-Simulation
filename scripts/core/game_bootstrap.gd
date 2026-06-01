@@ -93,10 +93,26 @@ func _assign_provinces_to_countries() -> void:
 
 
 func _initialize_systems() -> void:
-	if GameManager:
-		GameManager.month_advanced.connect(_on_month_advanced)
+	GameManager.day_advanced.connect(_on_day_advanced)
+	GameManager.month_advanced.connect(_on_month_advanced)
 	print("[GameBootstrap] Systems initialized.")
+
+
+func _on_day_advanced(_year: int, _month: int, _day: int) -> void:
+	DecreeSystem.tick_expiry()
+	PartySystem.tick_expiry()
+	for country: CountryData in CountryData.get_all():
+		EventSystem.tick(country.id)
 
 
 func _on_month_advanced(_year: int, _month: int) -> void:
 	EconomySystem.process_monthly_tick()
+	BuildingSystem.tick()
+	TradeSystem.tick()
+	ColonySystem.monthly_tick()
+	WarSystem.tick_month()
+	MilitarySystem.tick_morale_recovery()
+	DiplomacySystem.expire_treaties()
+	var current_day := GameManager.total_days
+	for country: CountryData in CountryData.get_all():
+		AchievementSystem.check_progress(country.id, current_day)

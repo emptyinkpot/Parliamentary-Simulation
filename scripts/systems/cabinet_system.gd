@@ -32,7 +32,7 @@ class MinisterData:
 	var name: String
 	var position: int       ## CabinetPosition enum value
 	var appointed_by: int   ## AppointmentType enum value
-	var appointed_date: float
+	var appointed_day: int  ## game-day count at appointment
 	var ability_score: float  ## 0-100, affects system efficiency
 
 	func _init(p_id: String = "", p_name: String = "", p_pos: int = 0,
@@ -41,7 +41,7 @@ class MinisterData:
 		name = p_name
 		position = p_pos
 		appointed_by = p_by
-		appointed_date = Time.get_unix_time_from_system()
+		appointed_day = GameManager.total_days
 		ability_score = clampf(p_ability, 0.0, 100.0)
 
 

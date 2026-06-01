@@ -23,6 +23,10 @@ var speed_intervals: Array[float] = [0.0, 2.0, 1.0, 0.5, 0.2, 0.05]
 
 var _tick_accumulator: float = 0.0
 
+## Total elapsed game days since game start. Used for expiry/duration logic
+## so systems never depend on real wall-clock time.
+var total_days: int = 0
+
 
 func _ready() -> void:
 	current_year = start_year
@@ -44,6 +48,7 @@ func _process(delta: float) -> void:
 
 func _advance_day() -> void:
 	current_day += 1
+	total_days += 1
 	var days_this_month := _get_days_in_month(current_month, current_year)
 
 	if current_day > days_this_month:

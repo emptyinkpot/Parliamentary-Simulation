@@ -44,8 +44,8 @@ class TreatyData:
 	var country_a: int
 	var country_b: int
 	var type: int  ## TreatyType enum
-	var signed_date: float
-	var expiry_date: float  ## 0 means permanent
+	var signed_day: int   ## game-day count at signing
+	var expiry_day: int   ## 0 means permanent; otherwise absolute game-day
 	var is_active: bool = true
 
 
@@ -158,8 +158,9 @@ func create_treaty(country_a: int, country_b: int,
 	treaty.country_a = country_a
 	treaty.country_b = country_b
 	treaty.type = type
-	treaty.signed_date = Time.get_unix_time_from_system()
-	treaty.expiry_date = treaty.signed_date + duration_months * 30.0 * 86400.0 if duration_months > 0 else 0.0
+	var current_day := GameManager.total_days
+	treaty.signed_day = current_day
+	treaty.expiry_day = current_day + duration_months * 30 if duration_months > 0 else 0
 	treaty.is_active = true
 
 	_treaties.append(treaty)
@@ -171,9 +172,9 @@ func create_treaty(country_a: int, country_b: int,
 
 ## Expire treaties that have passed their expiry date. Call periodically.
 func expire_treaties() -> void:
-	var now := Time.get_unix_time_from_system()
+	var now := GameManager.total_days
 	for t: TreatyData in _treaties:
-		if t.is_active and t.expiry_date > 0.0 and now >= t.expiry_date:
+		if t.is_active and t.expiry_day > 0 and now >= t.expiry_day:
 			t.is_active = false
 			treaty_expired.emit(t.id)
 
